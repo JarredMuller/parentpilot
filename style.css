@@ -1,0 +1,124 @@
+:root {
+    --chat-spacing: 0.9rem;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+#main-container {
+    display: flex; /* Enables flexbox layout */
+    height: 100%; /* Full height of the viewport */
+    border: 1px solid #ccc;
+}
+
+#chat-container {
+    flex-basis: 40%; /* Chat container takes 40% of the horizontal space */
+    padding: 20px;
+    overflow-y: auto; /* Scrollable if content overflows */
+}
+
+
+#chat-box {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+   /* padding: 10px;*/
+    height: 72%; /* Adjust the height as needed */
+    overflow-y: auto; /* Adds scroll for overflow */
+    overflow-x: hidden;
+    padding: var(--chat-spacing);
+
+}
+
+#original-image-box {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    height: 70%; /* Adjust the height as needed */
+    overflow-y: auto; /* Adds scroll for overflow */
+}
+
+input[type="text"], input[type="file"], button {
+    margin-top: 10px;
+    width: 100%; /* Full width within the container */
+}
+
+#image-input {
+    margin: 10px 0; /* Spacing around the buttons */
+}
+
+#chat-box::after {
+    clear: both;
+    display: table;
+    content: "";
+  }
+  .msg {
+    line-height: 1.75;
+    padding: 1rem;
+    box-sizing: border-box !important;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    max-width: 100%;
+    min-width: 100%;
+    margin-bottom: var(--chat-spacing);
+
+  }
+  
+  .msg .username {
+    font-weight: 600;
+    font-size: 1.1rem;
+    vertical-align: bottom;
+    display: flex;
+    align-items: center;
+  }
+  
+  .user {
+    background-color: #8EDFFA;
+    text-align: left;
+    float: left;
+    clear: right;
+    animation-name: chat-slide-right;
+    animation-duration: 0.7s;
+  }
+
+  .parentpilot{
+    vertical-align: middle;
+    color: #2d2c2c;
+    background-color: #f5f8f2;
+    float: right;
+    clear: left;
+    animation-name: chat-slide-left;
+    animation-duration: 0.7s;
+  }
+
+  .pp-icon {
+    vertical-align: middle;
+    margin-right: 5px;
+    float: left;
+    clear: left;
+    width: 40px;  /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+}
+  .user-icon {
+    vertical-align: middle;
+    margin-right: 5px;
+    float: left;
+    clear: left;
+    width: 40px;  /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+}
+
+
+
+  @keyframes chat-slide-right {
+    from  { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 100%; }
+  }
+
+  @keyframes chat-slide-left {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 100%; }
+  }

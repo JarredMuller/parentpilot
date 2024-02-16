@@ -76,7 +76,7 @@ input[type="text"], input[type="file"], button {
   }
   
   .user {
-    background-color: #8EDFFA;
+    background-color: #F9ECB8;
     text-align: left;
     float: left;
     clear: right;
@@ -87,7 +87,7 @@ input[type="text"], input[type="file"], button {
   .parentpilot{
     vertical-align: middle;
     color: #2d2c2c;
-    background-color: #f5f8f2;
+    background-color: #FFC2CA;
     float: right;
     clear: left;
     animation-name: chat-slide-left;

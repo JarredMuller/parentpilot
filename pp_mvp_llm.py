@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from openai import OpenAI
 from flask_cors import CORS, cross_origin
+import pyttsx3
 
 
 app = Flask(__name__)
@@ -26,7 +27,7 @@ def chat():
         temperature = 0.2
         max_tokens = 256
         frequency_penalty = 0.0
-        gpt_assistant_prompt = "Only answer questions on parenting , just respond I am only capable of aiding in parenting questions. Pretend you are an Parenting Advisor AI who is confident in their parenting advice, how would you answer this in simplest terms DO NOT INTRODUCE YOURSELF:"
+        gpt_assistant_prompt = "Only answer questions on parenting , just respond I am only capable of aiding in parenting questions. Pretend you are an experienced parent who is confident in their parenting advice, how would you answer this in simplest terms DO NOT INTRODUCE YOURSELF, respond only in a caring and confident manner:"
 
         response = client.chat.completions.create(
             messages=[
@@ -45,6 +46,7 @@ def chat():
         print("Bot Reply:", bot_reply)  # Debugging
         return jsonify({"response": bot_reply, "type": "text"})
 
+
     except Exception as e:
         print("Error occurred:", e)  # Debugging
         return jsonify({"error": str(e)}), 500
@@ -52,3 +54,6 @@ def chat():
 
 if __name__ == "__main__":
     app.run(debug=True, port=5002)
+
+
+#

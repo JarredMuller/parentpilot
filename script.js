@@ -59,7 +59,7 @@ function displayMessage(content, sender, type) {
             messageDiv.classList.add('user', 'msg');
             userIcon.src = 'user.png'; // Update with correct path
             userName.appendChild(userIcon);
-            userName.append(' Proactive Parent:');
+            userName.append(' Me:');
             headerDiv.appendChild(userName);
             messageDiv.appendChild(headerDiv);
             contentDiv.textContent = content;
@@ -68,7 +68,7 @@ function displayMessage(content, sender, type) {
             messageDiv.classList.add('parentpilot', 'msg');
             userIcon.src = 'parentpilot.png'; // Update with correct path
             userName.appendChild(userIcon);
-            userName.append('Parent Pilot:');
+            userName.append('Mum:');
             headerDiv.appendChild(userName);
             messageDiv.appendChild(headerDiv);
             contentDiv.textContent = content;
